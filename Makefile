@@ -3,14 +3,14 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: shdorsh <shdorsh@student.42.fr>            +#+  +:+       +#+         #
+#    By: abredimu <abredimu@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/12/29 04:41:03 by shdorsh           #+#    #+#              #
-#    Updated: 2024/12/29 14:24:40 by shdorsh          ###   ########.fr        #
+#    Updated: 2024/12/30 11:15:56 by abredimu         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-SRC = read_input.c main.c
+SRC = read_input.c
 OBJ = $(SRC:.c=.o)
 TARGET = read_input
 MAIN_TARGET = main_target.o
@@ -26,9 +26,6 @@ so: $(OBJ)
 
 a: $(OBJ)
 	$(CC) $(CFLAGS) -r $(OBJ) -o lib$(TARGET).a
-
-asm: $(OBJ)
-	$(CC) $(CFLAGS) $(SRC) -S -o $(TARGET).S
 
 main: $()
 	$(CC) $(CFLAGS) $(OBJ) -o $(MAIN_TARGET)
